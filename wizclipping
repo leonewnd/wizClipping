@@ -1,0 +1,16 @@
+/**** global var ****/
+
+/**** 点击标签时筛选出对应标签的Clippings ****/
+function displayTagClippings(){
+    $("a.note.*").click(function(event){
+        event.preventDefault();
+        thisTagStr = $(event.target).html()
+        $("div.note").hide();
+        $("div.note."+thisTagStr).show(500);
+    });
+}
+
+$(document).ready(function(){
+    displayTagClippings()
+}
+);
